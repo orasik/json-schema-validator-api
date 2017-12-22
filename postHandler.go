@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
-	"net/http"
-	"io/ioutil"
 	"github.com/xeipuuv/gojsonschema"
+	"io/ioutil"
+	"net/http"
 )
 
 func postHandler(context *gin.Context) {

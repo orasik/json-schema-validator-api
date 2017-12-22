@@ -1,9 +1,9 @@
 package main
 
 import (
-	"testing"
-	"os"
 	"fmt"
+	"os"
+	"testing"
 )
 
 func TestValidGetSchema(t *testing.T) {
