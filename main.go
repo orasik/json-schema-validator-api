@@ -6,7 +6,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	flag "gopkg.in/alecthomas/kingpin.v2"
 )
-// If you want to run the web server on a different port you can send it
+
+// Port is optional if you want to run the web server on a different port you can send it
 // As argument
 var (
 	Port = flag.Flag("port", "Please specify application port").Default("8080").String()
