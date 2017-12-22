@@ -1,16 +1,15 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
-	"fmt"
 	flag "gopkg.in/alecthomas/kingpin.v2"
 )
 
 var (
 	Port = flag.Flag("port", "Please specify application port").Default("8080").String()
 )
-
 
 func main() {
 
