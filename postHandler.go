@@ -35,9 +35,9 @@ func postHandler(context *gin.Context) {
 	}
 
 	schemaLoader := gojsonschema.NewReferenceLoader(fmt.Sprintf("file://%s", schemaFile))
-	requestJsonLoader := gojsonschema.NewBytesLoader(requestBody)
+	requestJSONLoader := gojsonschema.NewBytesLoader(requestBody)
 
-	result, err := gojsonschema.Validate(schemaLoader, requestJsonLoader)
+	result, err := gojsonschema.Validate(schemaLoader, requestJSONLoader)
 
 	if err != nil {
 		log.Errorf("Can not validate json")
@@ -52,13 +52,13 @@ func postHandler(context *gin.Context) {
 		context.JSON(http.StatusOK, response)
 
 		return
-	} else {
-		response.SuccessStatus = false
-		for _, err := range result.Errors() {
-			// Err implements the ResultError interface
-			response.Errors[err.Field()] = err.Description()
-		}
-
-		context.JSON(http.StatusBadRequest, response)
 	}
+
+	response.SuccessStatus = false
+	for _, err := range result.Errors() {
+		// Err implements the ResultError interface
+		response.Errors[err.Field()] = err.Description()
+	}
+
+	context.JSON(http.StatusBadRequest, response)
 }
