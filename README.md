@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/orasik/json-schema-validator-api.svg?branch=master)](https://travis-ci.org/orasik/json-schema-validator-api)
+[![Go Report Card](https://goreportcard.com/badge/github.com/orasik/json-schema-validator-api)](https://goreportcard.com/report/github.com/orasik/json-schema-validator-api)
 # Data Validation API
 Data validation API example to validate POST json request against Json Schema with go lang.
 
